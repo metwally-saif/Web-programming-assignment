@@ -3,6 +3,7 @@ import { format, parseISO } from 'date-fns'
 import { defineField, defineType } from 'sanity'
 
 import authorType from './author'
+import commentType from './comment'
 
 /**
  * This file is the schema definition for a post.
@@ -91,6 +92,18 @@ export default defineType({
       title: 'Author',
       type: 'reference',
       to: [{ type: authorType.name }],
+    }),
+    defineField({
+      name: 'comments',
+      title: 'Comments',
+      type: 'array',
+      of: [{ type: commentType.name}],
+    }),
+    defineField({
+      name: 'hashtags',
+      title: 'Hashtags',
+      type: 'array',
+      of: [{ type: 'string' }],
     }),
   ],
   preview: {

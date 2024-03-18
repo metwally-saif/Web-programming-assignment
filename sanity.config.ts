@@ -20,6 +20,7 @@ import { structureTool } from 'sanity/structure'
 import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
 import authorType from 'schemas/author'
 import postType from 'schemas/post'
+import commentType from 'schemas/comment'
 import settingsType from 'schemas/settings'
 
 const title =
@@ -32,7 +33,7 @@ export default defineConfig({
   title,
   schema: {
     // If you want more content types, you can add them to this array
-    types: [authorType, postType, settingsType],
+    types: [authorType, postType, settingsType, commentType],
   },
   plugins: [
     structureTool({

@@ -24,6 +24,7 @@ const NO_POSTS: Post[] = []
 export default function PostPage(props: PostPageProps) {
   const { preview, loading, morePosts = NO_POSTS, post, settings } = props
   const { title = demo.title } = settings || {}
+  const commentsCount: Number = post?.comments?.length
 
   const slug = post?.slug
 
@@ -48,8 +49,9 @@ export default function PostPage(props: PostPageProps) {
                   coverImage={post.coverImage}
                   date={post.date}
                   author={post.author}
+                  commentsCount={commentsCount}
                 />
-                <PostBody content={post.content} />
+                <PostBody content={post.content} comments={post.comments} hashtags={post.hashtags}/>
               </article>
               <SectionSeparator />
               {morePosts?.length > 0 && <MoreStories posts={morePosts} />}
