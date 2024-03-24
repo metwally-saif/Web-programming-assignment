@@ -1,3 +1,4 @@
+"use client"
 import IndexPage from 'components/IndexPage'
 import PreviewIndexPage from 'components/PreviewIndexPage'
 import { readToken } from 'lib/sanity.api'
@@ -5,6 +6,7 @@ import { getAllPosts, getClient, getSettings } from 'lib/sanity.client'
 import { Post, Settings } from 'lib/sanity.queries'
 import { GetStaticProps } from 'next'
 import type { SharedPageProps } from 'pages/_app'
+import React from 'react'
 
 interface PageProps extends SharedPageProps {
   posts: Post[]
@@ -17,9 +19,13 @@ interface Query {
 
 export default function Page(props: PageProps) {
   const { posts, settings, draftMode } = props
+  const [cur, setCur] = React.useState(posts)
 
+  React.useEffect(() => {
+    setCur(posts)
+  }, [posts])
   if (draftMode) {
-    return <PreviewIndexPage posts={posts} settings={settings} />
+    return <PreviewIndexPage posts={cur} settings={settings} />
   }
 
   return <IndexPage posts={posts} settings={settings} />
