@@ -1,8 +1,5 @@
 // This plugin is responsible for adding a “Preview” tab to the document pane
-// You can add any React component to `S.view.component` and it will be rendered in the pane
-// and have access to content in the form in real-time.
-// It's part of the Studio's “Structure Builder API” and is documented here:
-// https://www.sanity.io/docs/structure-builder-reference
+// in the Studio. This tab will show a preview of the document in the front-end
 
 import { DRAFT_MODE_ROUTE } from 'lib/sanity.api'
 import type { DefaultDocumentNodeResolver } from 'sanity/structure'

@@ -17,7 +17,14 @@ export default defineType( {
         name: 'email',
         title: 'Email',
         type: 'string',
-        validation: (rule) => rule.required(),
+        //add regex validation for email
+
+        validation: (rule) => rule.required() && rule.custom((email) => {
+            if (!email.match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)) {
+                return 'Please enter a valid email address'
+            }
+            return true
+        }),
     }),
     defineField({
         name: 'comment',
@@ -30,6 +37,12 @@ export default defineType( {
         title: "Hashtags",
         type: "array",
         of: [{type: "string"}],
+    }),
+    defineField({
+        name: 'comments',
+        title: 'Comments',
+        type: 'array',
+        of: [{type: 'comment'}],
     })
   ]
 })

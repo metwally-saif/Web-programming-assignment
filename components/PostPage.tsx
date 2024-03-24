@@ -50,8 +50,9 @@ export default function PostPage(props: PostPageProps) {
                   date={post.date}
                   author={post.author}
                   commentsCount={commentsCount}
+                  hashtags={post.hashtags}
                 />
-                <PostBody content={post.content} comments={post.comments} hashtags={post.hashtags}/>
+                <PostBody content={post.content} comments={post.comments} author={post.author}/>
               </article>
               <SectionSeparator />
               {morePosts?.length > 0 && <MoreStories posts={morePosts} />}

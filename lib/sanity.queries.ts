@@ -14,7 +14,8 @@ const postFields = groq`
     name,
     email,
     comment,
-    hashtags
+    hashtags,
+    comments[]
   }
 `
 
@@ -57,6 +58,7 @@ export interface comment {
   email: string
   comment: string
   hashtags: Array<string>
+  comments?: Array<comment>
 }
 
 export interface Post {

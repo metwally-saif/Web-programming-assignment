@@ -80,6 +80,16 @@ export default defineType({
       options: {
         hotspot: true,
       },
+      // validation for less than 2mb
+      validation: (rule) => rule.custom((image) => {
+        if (!image) {
+          return true
+        }
+        if ((image as { size: number }).size > 2 * 1024 * 1024) {
+          return 'Image must be less than 2mb'
+        }
+        return true
+      }),
     }),
     defineField({
       name: 'date',
