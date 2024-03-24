@@ -32,7 +32,6 @@ export default defineConfig({
   dataset,
   title,
   schema: {
-    // If you want more content types, you can add them to this array
     types: [authorType, postType, settingsType, commentType],
   },
   plugins: [
