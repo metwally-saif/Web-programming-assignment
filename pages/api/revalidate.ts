@@ -34,6 +34,16 @@ import { parseBody, type ParsedBody } from 'next-sanity/webhook'
 
 export { config } from 'next-sanity/webhook'
 
+/**
+ * @swagger
+ * /api/revalidate:
+ *   post:
+ *     summary: Revalidates the cache when a post or author is updated
+ *     description: Revalidates the cache when a post or author is updated and returns the updated routes.
+ *     responses:
+ *       200:
+ *         description: Successful response with the updated routes
+ */
 export default async function revalidate(
   req: NextApiRequest,
   res: NextApiResponse,

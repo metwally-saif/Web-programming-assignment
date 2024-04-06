@@ -1,5 +1,15 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
+
+/**
+ * @swagger
+ * /api/disable-draft:
+ *   get:
+ *     description: Disables the draft mode for the user
+ *     responses:
+ *       200:
+ *         description: Draft mode disabled successfully
+ */
 export default function handle(
   _req: NextApiRequest,
   res: NextApiResponse<void>,
@@ -11,3 +21,4 @@ export default function handle(
   res.writeHead(307, { Location: '/' })
   res.end()
 }
+

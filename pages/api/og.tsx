@@ -10,6 +10,24 @@ import { height, OpenGraphImage, width } from 'components/OpenGraphImage'
 import * as demo from 'lib/demo.data'
 import { Settings, settingsQuery } from 'lib/sanity.queries'
 
+
+/**
+ * @swagger
+ * /api/og:
+ *   get:
+ *     summary: Generates an Open Graph image with the specified title
+ *     description: Generates an Open Graph image with the specified title and returns the image response.
+ *     parameters:
+ *       - name: title
+ *         in: query
+ *         description: The title to be displayed on the Open Graph image
+ *         required: false
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: Successful response with the generated Open Graph image
+ */
 export default async function og(req: NextRequest, res: NextResponse) {
   const font = fetch(new URL('public/Inter-Bold.woff', import.meta.url)).then(
     (res) => res.arrayBuffer(),
