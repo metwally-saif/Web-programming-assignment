@@ -57,3 +57,4 @@ Clone the repository and install dependencies:
 git clone https://github.com/your-username/catstagram.git
 cd catstagram
 npm install
+```
