@@ -19,7 +19,7 @@ export default function BlogHeader({
       return (
         <header className="mb-10 mt-16 flex flex-col items-center md:mb-12 md:flex-row md:justify-between text-pretty">
           <h1 className="text-6xl font-bold leading-tight tracking-tighter md:pr-8 md:text-8xl">
-            {hashtag ? ("showing resualts for #" + hashtag) : title}
+            {hashtag ? 'showing resualts for #' + hashtag : title}
           </h1>
           <h4
             className={`mt-5 text-center text-lg md:pl-8 md:text-left ${styles.portableText}`}
@@ -34,7 +34,7 @@ export default function BlogHeader({
         <header>
           <h2 className="mb-20 mt-8 text-2xl font-bold leading-tight tracking-tight md:text-4xl md:tracking-tighter text-pretty">
             <Link href="/" className="hover:underline">
-            {hashtag && ("#" + hashtag)}
+              {hashtag && '#' + hashtag}
               {title}
             </Link>
           </h2>

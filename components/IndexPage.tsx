@@ -26,7 +26,12 @@ export default function IndexPage(props: IndexPageProps) {
 
       <Layout preview={preview} loading={loading}>
         <Container>
-          <BlogHeader title={title} description={description} level={1}  hashtag={hashtag}/>
+          <BlogHeader
+            title={title}
+            description={description}
+            level={1}
+            hashtag={hashtag}
+          />
           {heroPost && (
             <HeroPost
               title={heroPost.title}

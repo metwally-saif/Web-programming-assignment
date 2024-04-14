@@ -15,7 +15,6 @@ import {
   settingsQuery,
 } from 'lib/sanity.queries'
 import { createClient, type SanityClient } from 'next-sanity'
-import { revalidatePath } from 'next/cache'
 
 export function getClient(preview?: { token: string }): SanityClient {
   const client = createClient({
@@ -50,7 +49,6 @@ export async function getSettings(client: SanityClient): Promise<Settings> {
 }
 
 export async function getAllPosts(client: SanityClient): Promise<Post[]> {
-  revalidatePath('')
   return (await client.fetch(indexQuery)) || []
 }
 

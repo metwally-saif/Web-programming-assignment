@@ -7,10 +7,18 @@ import Link from 'next/link'
 export default function HeroPost(
   props: Pick<
     Post,
-    'title' | 'coverImage' | 'date' | 'excerpt' | 'author' | 'slug' | 'comments' | 'hashtags'
+    | 'title'
+    | 'coverImage'
+    | 'date'
+    | 'excerpt'
+    | 'author'
+    | 'slug'
+    | 'comments'
+    | 'hashtags'
   >,
 ) {
-  const { title, coverImage, date, excerpt, author, slug, comments, hashtags } = props
+  const { title, coverImage, date, excerpt, author, slug, comments, hashtags } =
+    props
 
   return (
     <section>

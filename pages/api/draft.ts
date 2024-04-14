@@ -17,6 +17,16 @@ const client = createClient({
   token,
 })
 
+/**
+ * @swagger
+ * /api/disable-draft:
+ *   get:
+ *     summary: Disables the draft mode for the user
+ *     description: Disables the draft mode for the user and redirects to the specified URL.
+ *     responses:
+ *       200:
+ *         description: Draft mode disabled successfully
+ */
 export default async function handle(
   req: NextApiRequest,
   res: NextApiResponse<string | void>,

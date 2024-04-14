@@ -5,7 +5,6 @@ import { defineField, defineType } from 'sanity'
 import authorType from './author'
 import commentType from './comment'
 
-
 export default defineType({
   name: 'post',
   title: 'Post',
@@ -70,15 +69,16 @@ export default defineType({
         hotspot: true,
       },
       // validation for less than 2mb
-      validation: (rule) => rule.custom((image) => {
-        if (!image) {
+      validation: (rule) =>
+        rule.custom((image) => {
+          if (!image) {
+            return true
+          }
+          if ((image as { size: number }).size > 2 * 1024 * 1024) {
+            return 'Image must be less than 2mb'
+          }
           return true
-        }
-        if ((image as { size: number }).size > 2 * 1024 * 1024) {
-          return 'Image must be less than 2mb'
-        }
-        return true
-      }),
+        }),
     }),
     defineField({
       name: 'date',
@@ -96,7 +96,7 @@ export default defineType({
       name: 'comments',
       title: 'Comments',
       type: 'array',
-      of: [{ type: commentType.name}],
+      of: [{ type: commentType.name }],
     }),
     defineField({
       name: 'hashtags',
