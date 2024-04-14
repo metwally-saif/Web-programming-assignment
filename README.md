@@ -57,3 +57,12 @@ Clone the repository and install dependencies:
 git clone https://github.com/your-username/catstagram.git
 cd catstagram
 npm install
+```
+
+
+### ScreenShots
+![Opera Snapshot_2024-04-14_165904_localhost](https://github.com/metwally-saif/Web-programming-assignment/assets/65094581/df9bbb7f-1d6c-43b5-b6ae-e982d880374a)
+![Opera Snapshot_2024-04-14_165726_localhost](https://github.com/metwally-saif/Web-programming-assignment/assets/65094581/5a0a6996-61b8-481c-b930-688f6607cff5)
+![Opera Snapshot_2024-04-14_171525_localhost](https://github.com/metwally-saif/Web-programming-assignment/assets/65094581/4c324892-fae4-4149-9681-c93a2d7c8ac8)
+![Opera Snapshot_2024-04-14_165938_localhost](https://github.com/metwally-saif/Web-programming-assignment/assets/65094581/e65d1b3d-1311-4ba8-b830-b7d34fb327ea)
+
